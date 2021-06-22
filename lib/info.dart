@@ -32,7 +32,7 @@ class Info extends StatelessWidget {
           padding: EdgeInsets.only(top: 150),
           child: Center(
             child: Container(
-              height: MediaQuery.of(context).size.height * 1,
+              height: MediaQuery.of(context).size.height * 0.9,
               width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(
                 color: Colors.white70,
@@ -60,18 +60,18 @@ class Info extends StatelessWidget {
                     SizedBox(
                       height: 50,
                     ),
-                    RaisedButton(
-                      onPressed: () {
-                        openURL();
-                      },
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.black, width: 4),
-                          borderRadius: BorderRadius.all(Radius.circular(30))),
-                      child: const Image(
-                        image: AssetImage('assets/images/vid_thumbnail.png'),
-                      ),
-                    )
+                    // RaisedButton(
+                    //   onPressed: () {
+                    //     openURL();
+                    //   },
+                    //   color: Colors.white,
+                    //   shape: RoundedRectangleBorder(
+                    //       side: BorderSide(color: Colors.black, width: 4),
+                    //       borderRadius: BorderRadius.all(Radius.circular(30))),
+                    //   child: const Image(
+                    //     image: AssetImage('assets/images/vid_thumbnail.png'),
+                    //   ),
+                    // )
                   ])),
             ),
           )),
