@@ -53,14 +53,14 @@ class Info extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      'Click the image below to install flutter:',
-                      style: TextStyle(fontSize: 20, height: 1.5),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    // RaisedButton(
+                    // Text(
+                    //   'Click the image below to install flutter:',
+                    //   style: TextStyle(fontSize: 20, height: 1.5),
+                    // ),
+                    // SizedBox(
+                    //   height: 50,
+                    // ),
+                    // // RaisedButton(
                     //   onPressed: () {
                     //     openURL();
                     //   },
