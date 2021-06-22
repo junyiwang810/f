@@ -133,8 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Container(
                             margin: const EdgeInsets.only(bottom: 40.0),
-                            width: 400.0,
-                            height: 400.0,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            height: MediaQuery.of(context).size.height * 0.5,
                             child: FlipCard(
                                 front: FlashcardView(
                                   text: _flashcards[_currIndex].question,

@@ -15,30 +15,30 @@ class Info extends StatelessWidget {
               fontSize: 30,
             )),
         shape: RoundedRectangleBorder(
-            borderRadius:
-            BorderRadius.vertical(bottom: Radius.circular(30))),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         toolbarHeight: 100,
         backgroundColor: Colors.white30,
       ),
       body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                    // Color(0xFF23cdba), Color(0xFFb3b312)
-                    Theme.of(context).colorScheme.primary,
-                    Theme.of(context).colorScheme.secondary
-                  ],
-                  stops: [0.1, 1],
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft)),
+              gradient: LinearGradient(colors: [
+            // Color(0xFF23cdba), Color(0xFFb3b312)
+            Theme.of(context).colorScheme.primary,
+            Theme.of(context).colorScheme.secondary
+          ], stops: [
+            0.1,
+            1
+          ], begin: Alignment.topRight, end: Alignment.bottomLeft)),
           padding: EdgeInsets.only(top: 150),
           child: Center(
             child: Container(
-              height: 700,
-              width: 400,
+              height: MediaQuery.of(context).size.height * 1,
+              width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(
                 color: Colors.white70,
-                borderRadius: BorderRadius.all(Radius.circular(30)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
               ),
               padding: EdgeInsets.only(top: 100, left: 30, right: 20),
               child: Center(
