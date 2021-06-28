@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flip_card/flip_card.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyAppState createState() => new _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -48,12 +49,12 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState createState() => new _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Flashcard> _flashcards = [
-    Flashcard(question: "1) What is my name", answer: "Junyi"),
+  List<Flashcard> _flashcards = [
+    Flashcard(question: "1) What is my name", answer: answer),
     Flashcard(question: "2) What year was I born on", answer: "2008"),
     Flashcard(question: "3) What is my favorate color", answer: "orange"),
     Flashcard(question: "4) What is my favorate food", answer: "ice cream"),
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
+    print("answer in build" + answer);
     return MaterialApp(
         // debugShowCheckedModeBanner: false,
         title: 'Flashcard',
@@ -183,14 +184,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  // floatingActionButton: new FloatingActionButton(
-                  //   onPressed: () {
-                  //     Navigator.of(context).push(_createRoute1());
-                  //   },
-                  //   tooltip: 'Increment',
-                  //   child: new Icon(Icons.add),
-                  //   backgroundColor: Colors.white70,
-                  // ),
+                  floatingActionButton: new FloatingActionButton(
+                    onPressed: () {
+                      Navigator.of(context).push(_createRoute1());
+                    },
+                    tooltip: 'Increment',
+                    child: new Icon(Icons.add),
+                    backgroundColor: Colors.white70,
+                  ),
                 )));
   }
 
@@ -226,23 +227,23 @@ Route _createRoute() {
   );
 }
 
-// Route _createRoute1() {
-//   return PageRouteBuilder(
-//     pageBuilder: (context, animation, secondaryAnimation) => Add(),
-//     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-//       var begin = Offset(0.0, 1.0);
-//       var end = Offset.zero;
-//       var curve = Curves.ease;
+Route _createRoute1() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => Add(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(0.0, 1.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
 
-//       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-//       return SlideTransition(
-//         position: animation.drive(tween),
-//         child: child,
-//       );
-//     },
-//   );
-// }
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
 
 openURL() async {
   const url = 'https://www.youtube.com/watch?v=7its9Zg2Ne4';
